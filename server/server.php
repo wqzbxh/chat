@@ -1,5 +1,5 @@
 <?php
-use vendor\Workerman\Worker;
+use Workerman\Worker;
 require_once __DIR__ . '/vendor/Workerman/Autoloader.php';
 
 // 注意：这里与上个例子不同，使用的是websocket协议
