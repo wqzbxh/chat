@@ -3,7 +3,7 @@ ws.onopen = function() {
     console.log("Success!")
 };
 ws.onmessage = function(e) {
-    console.log("收到服务端的消息：" + e.data);
+    console.log(JSON.parse(e.data));
     var html = document.getElementById("chat-left-above").innerHTML;
-    document.getElementById("chat-left-above").innerHTML=html + "<div>"+e.data+"在</div>";
+    document.getElementById("chat-left-above").innerHTML=html + "<div>"+e.data+"</div>";
 };

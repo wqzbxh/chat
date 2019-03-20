@@ -4,23 +4,26 @@
 	height: 600px;
 	margin: 0 auto;
 	background: #efefef;
+	border: 1px solid #333;
 }
 
 .chat-title{
 	background: #ccc;
 	padding: 5px 0px 5px 10px;
+	height: 20px;
 }
 
 .chat-left{
 	width: 550px;
-	height:590px;
-	padding: 5px 0px 5px 10px;
+	height:560px;
 	float: left;
 	background: #ffffff;
 }
 .chat-left-above{
+	padding: 5px 0px 5px 10px;
 	width: 550px;
-	height:450px;
+	height:420px;
+	overflow: auto;
 }
 .chat-left-below{
 	width: 550px;
@@ -28,14 +31,25 @@
 }
 .chat-left-text{
 	background: #e5ffff;
-	height:130px;
-	border: none;
 	width: 550px;
+	border: none;
+	height:130px;
 	text-align: left;
 }
 .chat-right{
-	width: 240px;
-	height:590px;
+	width: 250px;
+	height:570px;
 	float: left;
 	background: #d9d9d9;
+}
+#nac{
+	overflow: hidden;
+}
+
+/* 聊天框 */
+.chat-content-list{
+	margin-bottom: 10px;
+}
+a{
+	text-decoration: none;
 }

@@ -1,0 +1,1 @@
+2019-03-19 01:48:40 pid:1 Worker process terminated with ERROR: E_RECOVERABLE_ERROR "Object of class Workerman\Connection\TcpConnection could not be converted to string in C:\phpStudy\PHPTutorial\WWW\chat\server\server.php on line 17"
