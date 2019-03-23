@@ -8,18 +8,10 @@
 	</head>
 	<body>
 		<div class="chat-big-box">
-			<div class="chat-title">聊天室：在线人数2人</div>
+			<div class="chat-title">聊天室：<span style="color: #555;font-size: 12px;" id="online_user_count">0人在线</span></div>
 			<div id="nac">
 				<div class="chat-left">
 					<div class="chat-left-above" id="chat-left-above">
-						<div class="chat-content-list">
-							<span class="username"><a href="">普秋真</a>：</span>
-							<span class="usertext">有人吗???</span>
-						</div>
-						<div class="chat-content-list">
-							<span class="username"><a href="">王艺颖</a>：</span>
-							<span class="usertext">不在</span>
-						</div>
 					</div>
 					<div class="chat-left-below">
 						<textarea class="chat-left-text" id="chatContent"></textarea>
@@ -34,7 +26,8 @@
 					</div>
 				</div>	
 			</div>
-		</div>
+		</div> <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+		<script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
 		<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/chat.js" type="text/javascript" charset="utf-8"></script>
 	</body>

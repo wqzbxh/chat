@@ -23,7 +23,8 @@
 	padding: 5px 0px 5px 10px;
 	width: 550px;
 	height:420px;
-	overflow: auto;
+	overflow:auto;
+	overflow-x: hidden
 }
 .chat-left-below{
 	width: 550px;
@@ -52,4 +53,21 @@
 }
 a{
 	text-decoration: none;
+	color: blue;
+}
+.new-user {
+	width: 550px;
+	text-align: center;
+	font-size:13px;
+	margin-top: 10px;
+}
+
+.usernamemine a{
+	font-size: 15px;
+	color: forestgreen;
+	font-weight: 600;
+}
+.usertextmine{
+	font-size: 14px;
+	color: forestgreen;
 }
