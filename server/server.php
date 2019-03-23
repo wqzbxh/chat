@@ -14,11 +14,11 @@ $ws_worker->onMessage = function($connections, $data)
 	global $ws_worker;
     // 向客户端发送hello $data
     // $connection->send('hello ' . $data);
-	$dataInfo = json_decode($data,true);
+	//$dataInfo = json_decode($data,true);
 	   // 遍历当前进程所有的客户端连接，发送当前服务器的时间
 	foreach($ws_worker->connections as $connection)
 	{
-		$connection->send($dataInfo);
+		$connection->send($data);
 	}
 };
 

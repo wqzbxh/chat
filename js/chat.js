@@ -3,7 +3,7 @@ ws.onopen = function() {
     console.log("Success!")
 };
 ws.onmessage = function(e) {
-    console.log(JSON.parse(e.data));
+    // console.log(JSON.parse(e.data));
     var html = document.getElementById("chat-left-above").innerHTML;
     document.getElementById("chat-left-above").innerHTML=html + "<div>"+e.data+"</div>";
 };
