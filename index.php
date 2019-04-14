@@ -1,3 +1,6 @@
+<?php
+	 session_start();
+ ?>
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -28,7 +31,27 @@
 			</div>
 		</div> <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
 		<script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
-		<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+		<script> var username="<?php echo $_SESSION['userinfo']; ?>"</script>
 		<script src="js/chat.js" type="text/javascript" charset="utf-8"></script>
 	</body>
 </html>
+<script type="text/javascript">
+	var userid = 1;
+	var username =" <?php echo $_SESSION['userinfo']; ?>";
+	document.onkeydown=function(e){
+	    var content =  document.getElementById("chatContent").value;
+	    if(e.keyCode == 13 && e.ctrlKey){ // 这里实现换行
+	        document.getElementById("chatContent").value += "\n";
+	    }else if(e.keyCode == 13){// 避免回车键换行
+	        e.preventDefault();
+	        // 下面写你的发送消息的代码
+			var msg_obj = {"action_type":"senAllMsg","username":username,"userid":userid,"content":content};
+	 		var msg = JSON.stringify(msg_obj);
+	        if(content!= ""){
+	            ws.send(msg);
+				var text="";
+				document.getElementById("chatContent").value = text;
+	        }
+	    }
+	}
+</script>

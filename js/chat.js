@@ -1,8 +1,7 @@
 ws = new WebSocket("ws://127.0.0.1:2000");
 var d =  document;
 ws.onopen = function() {
-    console.log("Success!")
-	var msg_obj = {"action_type":"login","username":"普秋真","userid":1};
+	var msg_obj = {"action_type":"login","username":username,"userid":1};
 	var msg = JSON.stringify(msg_obj);
 	ws.send(msg);
 };
