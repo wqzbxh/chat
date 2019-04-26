@@ -31,8 +31,9 @@
 			</div>
 		</div> <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
 		<script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
-		<script> var username="<?php echo $_SESSION['userinfo']; ?>"</script>
+		<script> var username="<?php echo $_SESSION['userinfo']; ?>";var userid="<?php echo $_SESSION['userid']; ?>"</script>
 		<script src="js/chat.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
 	</body>
 </html>
 <script type="text/javascript">
