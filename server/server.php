@@ -11,7 +11,7 @@ $ws_worker->count = 1;
 // 当收到客户端发来的数据后返回hello $data给客户端
 $ws_worker->onMessage = function($connection, $data)
 {
-	global $ws_worker;
+	global $ws_worker,$userList; 
     // $connection->send('hello ' . $data);
 	$dataInfo = json_decode($data,true);//把前端的josn数字符串转为数组方便操作
 	
@@ -19,10 +19,15 @@ $ws_worker->onMessage = function($connection, $data)
 		//设置用户信息
 		$connection->uid = $dataInfo['userid'];
 		$connection->username = $dataInfo['username'];
+		$userList[] = [
+			'userid' => $dataInfo['userid'],
+			'username' => $dataInfo['username'],
+		];
 		$data_arr = json_encode([
 			'username' => $dataInfo['username'],
 			'text' => "进入聊天室",
 			'action_type' => "login",
+			'iser_list' => $userList
 		]);
 	   // 遍历当前进程所有的客户端连接，
 		foreach($ws_worker->connections as $connection)
@@ -70,8 +75,13 @@ $ws_worker->onConnect = function($connection)
 // 用户断开链接
 $ws_worker->onClose = function($connection)
 {
-	global $ws_worker,$user_count;
+	global $ws_worker,$user_count,$userList;
 	$user_count = $user_count-1;
+	foreach($userList as $key => $value){
+		if($connection->uid == $value['userid']){
+			unset($userList[$key]);
+		} 
+	}
     // 遍历当前进程所有的客户端连接，发送当前服务器的时间
     foreach($ws_worker->connections as $con)
     {
@@ -79,6 +89,7 @@ $ws_worker->onClose = function($connection)
 		$send_data = json_encode([
 			'action_type' => 'user_on_close',
 			'username' => $connection->username,
+			'iser_list' => $userList,
 			'text' => '已经离开']);
 		$con->send($send_data);
 

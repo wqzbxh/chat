@@ -23,13 +23,12 @@
 				<div class="chat-right">
 					<div class="chat-list-title">在线列表</div>
 					<div class="chat-list">
-						<div>王艺颖</div>
-						<div>普秋真</div>
-						<div>王海洋</div>
+						<div><a href="#?userid=1">王艺颖</a></div>
 					</div>
 				</div>	
 			</div>
-		</div> <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+		</div> 
+		<a href="server/quit.php">退出</a>
 		<script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
 		<script> var username="<?php echo $_SESSION['userinfo']; ?>";var userid="<?php echo $_SESSION['userid']; ?>"</script>
 		<script src="js/chat.js" type="text/javascript" charset="utf-8"></script>
