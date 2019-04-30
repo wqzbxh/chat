@@ -8,8 +8,8 @@
 	<link href="favicon.ico" type="image/x-icon" rel="icon">
 	<link href="iTunesArtwork_402x.png" sizes="114x114" rel="apple-touch-icon-precomposed">
 </head>
-<body>
-	<div class="aui-container">
+<body style="text-align: center;margin-left:45% ;width: 100%;">
+	<div class="aui-container" style="width:360px;text-align: center;">
 		<div class="aui-page">
 			<div class="aui-page-my">
 				<div class="aui-my-info">
@@ -30,7 +30,7 @@
 								</a>
 							</li>
 							<li class="b-line">
-								<a href="my-read.html">
+								<a href="index.php">
 									<div class="aui-icon"><img src="images/icon-home/my-in2.png"></div>
 									<h3>加入群聊</h3>
 									<div class="aui-time"><i class="aui-jump"></i></div>

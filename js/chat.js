@@ -51,7 +51,16 @@ function showUserList(user_list)
 {
 	$('.chat-list').html('');
 	$.each(user_list,function(i,n){
-		var htmllist = "<div><a href=chat_two.php?userid="+n.userid+">"+n.username+"</a></div>";
+		var htmllist = "<div class='userli' onclick='skip("+n.userid+")'>"+n.username+"</div>";
 	    $('.chat-list').append(htmllist);
 	});
+}
+// 私聊跳转
+function skip(id)
+{
+	if(userid == id ){
+		alert('不能与自己聊天');
+		return;
+	}
+	window.open("chat_two.php?id="+id);
 }

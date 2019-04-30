@@ -102,3 +102,14 @@ a{
 	text-align: right;
 	margin-right: 5%;
 }
+
+/* 用户列表 */
+.userli{
+margin: 5px 2px 5px 10px;
+color: #006699;
+}
+.chat-list-title{
+		margin: 5px 2px 5px 10px;
+		color: #000;
+		font-weight: 600;
+}

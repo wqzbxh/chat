@@ -11,7 +11,7 @@ if(!empty($access) && !empty($pass)){//验证账号和密码是否为空
 	if(!empty($arr)){//账号密码正确
 		$_SESSION['userinfo'] = $access;//把用户名存起来session
 		$_SESSION['userid'] = $arr[0]['id'];//把用户名存起来session
-		echo "<script>window.location.href='http://local.chat.top/index.php'</script>";
+		echo "<script>window.location.href='http://local.chat.top/zhuye.php'</script>";
 	}else{
 		 exit('账号密码不正确！点击此处 <a href="javascript:history.back(-1);">返回</a> 重试');
 	}

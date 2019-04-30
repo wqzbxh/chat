@@ -10,7 +10,7 @@ if(empty($arr)){//注册
 	$insertSql = "INSERT INTO user (acces,pass,sex,age) VALUES ('".$access."','".$pass."', '2','21')";
 	$insertResult = mysqli_query($con, $insertSql);
 	if($insertResult){//已经成功了
-		echo "<script>alert('添加成功！');window.location.href='http://local.ceshi.top/login.html'</script>";
+		echo "<script>alert('添加成功！');window.location.href='http://local.chat.top/login.html'</script>";
 	}else{//添加失败
 		exit('添加失败！点击此处 <a href="javascript:history.back(-1);">返回</a> 重试');
 		}
