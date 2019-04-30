@@ -68,7 +68,13 @@ a{
 }
 .usertextmine{
 	font-size: 14px;
-	color: #e62e00;
+	color: #999;
+	background: #eee;
+	margin:10px 3px 10px 30px;
+	padding: 10px 20px 10px 5px;
+	box-shadow: 1px 1px 1px #b3ffe0;
+	border-radius: 5px;
+	
 }
 
 .username a{
@@ -77,5 +83,22 @@ a{
 }
 .usertext{
 	font-size: 14px;
-	color: #1a75ff;
+	color: #FFF;
+	background: #5FB878;
+	margin:10px 3px 10px 30px;
+	padding: 10px 20px 10px 5px;
+	box-shadow: 1px 1px 1px #CCCCCC;
+	border-radius: 5px;
+}
+
+.usercontent{
+	margin:10px 0;
+}
+.usertime{
+		font-size: 10px;
+		color: #666;
+}
+.chat-content-list-minne{
+	text-align: right;
+	margin-right: 5%;
 }

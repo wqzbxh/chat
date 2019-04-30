@@ -11,23 +11,17 @@
 	</head>
 	<body>
 		<div class="chat-big-box">
-			<div class="chat-title">聊天室：<span style="color: #555;font-size: 12px;" id="online_user_count">0人在线</span></div>
+			<div class="chat-title">XXXXX：</div>
 			<div id="nac">
 				<div class="chat-left">
 					<div class="chat-left-above" id="chat-left-above">
-							<div class="chat-content-list-minne">
-								<div class="usernametime"><span class="username"><a href="">测：</a></span><i class="usertime">2019-04-28 17：29：45</i></div>
-								<div class="usercontent"><span class="usertext">ce</span></div>
-							</div>
-					</div>						
+					</div>
 					<div class="chat-left-below">
 						<textarea class="chat-left-text" id="chatContent"></textarea>
 					</div>
 				</div>
 				<div class="chat-right">
-					<div class="chat-list-title">在线列表</div>
-					<div class="chat-list">
-					</div>
+					
 				</div>	
 			</div>
 		</div> 

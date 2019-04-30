@@ -16,9 +16,9 @@ ws.onmessage = function(e) {
 	}
 	if(resultObj.action_type == 'senAllMsg'){//f服务端返回状态是发消息
 		if(resultObj.my_msg == 0){
-			var html = '<div class="chat-content-list"><span class="username"><a href="">'+resultObj.username+'：</a></span><span class="usertext">'+resultObj.content+'</span></div>';
+			var html = '<div class="chat-content-list"><div class="usernametime"><span class="username"><a href="">'+resultObj.username+'：</a></span><i class="usertime">2019-04-28 17：29：45</i></div><div class="usercontent"><span class="usertext">'+resultObj.content+'</span></div></div>'
 		}else{
-			var html = '<div class="chat-content-list"><span class="usernamemine"><a href="">'+resultObj.username+'：</a></span><span class="usertextmine">'+resultObj.content+'</span></div>';
+			var html = '<div class="chat-content-list-minne"><div class="usernametime"><span class="username"><a href="">'+resultObj.username+'：</a></span><i class="usertime">2019-04-28 17：29：45</i></div><div class="usercontent"><span class="usertextmine">'+resultObj.content+'</span></div></div>'
 		}
 		
 		 $(".chat-left-above").append(html);
@@ -51,7 +51,7 @@ function showUserList(user_list)
 {
 	$('.chat-list').html('');
 	$.each(user_list,function(i,n){
-		var htmllist = "<div><a href=#?userid="+n.userid+">"+n.username+"</a></div>";
+		var htmllist = "<div><a href=chat_two.php?userid="+n.userid+">"+n.username+"</a></div>";
 	    $('.chat-list').append(htmllist);
 	});
 }
