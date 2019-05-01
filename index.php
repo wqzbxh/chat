@@ -1,5 +1,9 @@
 <?php
 	 session_start();
+	@var_dump($_GET['room_id']);
+	if($_GET['room_id'] == NULL) {
+			echo "<script>alert('房间号不存在！');window.location.href='http://local.chat.top/roomlist.php'</script>";
+	}
  ?>
 <!DOCTYPE HTML>
 <html>
@@ -17,7 +21,7 @@
 					<div class="chat-left-above" id="chat-left-above">
 					</div>						
 					<div class="chat-left-below">
-						<textarea class="chat-left-text" id="chatContent"></textarea>
+						<textarea class="chat-left-text" id="chatContent "></textarea>
 					</div>
 				</div>
 				<div class="chat-right">
@@ -29,7 +33,13 @@
 		</div> 
 		<a href="server/quit.php">退出</a>
 		<script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
-		<script> var username="<?php echo $_SESSION['userinfo']; ?>";var userid="<?php echo $_SESSION['userid']; ?>"</script>
+		<script> 
+			var username="<?php echo $_SESSION['userinfo']; ?>";//定义用户姓名
+			var userid="<?php echo $_SESSION['userid'];?>";//定义用户ID
+			var room_id="<?php echo $_GET['room_id']; ?>";
+			var type= 1;
+			var touserid = 0;
+		</script>
 		<script src="js/chat.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
 	</body>

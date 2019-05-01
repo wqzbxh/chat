@@ -5,7 +5,7 @@
 	    }else if(e.keyCode == 13){// 避免回车键换行
 	        e.preventDefault();
 	        // 下面写你的发送消息的代码
-			var msg_obj = {"action_type":"senAllMsg","username":username,"userid":userid,"content":content};
+			var msg_obj = {"action_type":"senAllMsg","username":username,"userid":userid,"content":content,'type':type,'room_id':room_id,'touserid':touserid};
 	 		var msg = JSON.stringify(msg_obj);
 	        if(content!= ""){
 	            ws.send(msg);

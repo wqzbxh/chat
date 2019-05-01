@@ -1,6 +1,3 @@
-<?php
-	 session_start();
- ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,23 +23,23 @@
 					<div class="aui-menu-list aui-menu-list-clear">
 						<ul>
 							<li class="b-line">
-								<a href="my-put.html">
-									<div class="aui-icon"><img src="images/icon-home/my-in1.png"></div>
-									<h3>姓名：<?php echo  $_SESSION['userinfo'] ;?></h3>
-									<div class="aui-time"><i class="aui-jump"></i></div>
-								</a>
-							</li>
-							<li class="b-line">
-								<a href="roomlist.php">
+								<a href="index.php?room_id=1">
 									<div class="aui-icon"><img src="images/icon-home/my-in2.png"></div>
-									<h3>加入群聊</h3>
+									<h3>1号房间</h3>
 									<div class="aui-time"><i class="aui-jump"></i></div>
 								</a>
 							</li>
 							<li class="b-line">
-								<a href="my-secure.html">
-									<div class="aui-icon"><img src="images/icon-home/my-in3.png"></div>
-									<h3>创建房间</h3>
+								<a href="index.php?room_id=2">
+									<div class="aui-icon"><img src="images/icon-home/my-in2.png"></div>
+									<h3>2号房间</h3>
+									<div class="aui-time"><i class="aui-jump"></i></div>
+								</a>
+							</li>
+							<li class="b-line">
+								<a href="index.php?room_id=3">
+									<div class="aui-icon"><img src="images/icon-home/my-in2.png"></div>
+									<h3>3号房间</h3>
 									<div class="aui-time"><i class="aui-jump"></i></div>
 								</a>
 							</li>
