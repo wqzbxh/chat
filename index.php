@@ -4,6 +4,9 @@
 	if($_GET['room_id'] == NULL) {
 			echo "<script>alert('房间号不存在！');window.location.href='http://local.chat.top/roomlist.php'</script>";
 	}
+	if($_SESSION['userinfo'] == NULL) {
+			echo "<script>alert('没有用户信息！');window.location.href='http://local.chat.top/roomlist.php'</script>";
+	}
  ?>
 <!DOCTYPE HTML>
 <html>
@@ -21,7 +24,7 @@
 					<div class="chat-left-above" id="chat-left-above">
 					</div>						
 					<div class="chat-left-below">
-						<textarea class="chat-left-text" id="chatContent "></textarea>
+						<textarea class="chat-left-text" id="chatContent"></textarea>
 					</div>
 				</div>
 				<div class="chat-right">

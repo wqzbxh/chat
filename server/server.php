@@ -58,7 +58,7 @@ $ws_worker->onMessage = function($connection, $data)
 			$insertSql = "INSERT INTO content (user_id,type,content,create_time,to_purpose) VALUES (".$connection->uid.", ". $dataInfo['type'].",'". $dataInfo['content']."', ".time().", ". $dataInfo['room_id'].")";
 			$insertResult = mysqli_query($con, $insertSql);
 		}else{
-			$insertSql = "INSERT INTO content (user_id,type,content,create_time,to_purpose) VALUES (".$connection->uid.", ". $dataInfo['type'].",'". $dataInfo['content']."', ".time().", ". $dataInfo['touserid'].")";
+			$insertSql = "INSERT INTO content (user_id,type,content,create_time,to_purpose) VALUES (".$connection->uid.", ". $dataInfo['type'].",'". $dataInfo['content']."', ".time().", ". $dataInfo['room_id'].")";
 			$insertResult = mysqli_query($con, $insertSql);
 		}	
 	    foreach($ws_worker->connections as $con)

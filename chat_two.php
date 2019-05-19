@@ -1,5 +1,8 @@
 <?php
 	 session_start();
+	if($_SESSION['userinfo'] == NULL) {
+			echo "<script>alert('没有用户信息！');window.location.href='http://local.chat.top/roomlist.php'</script>";
+	}
 	 //获取这个私聊的ID以及用户信息保存起来
 	 $touserid = $_GET['id'];
 	 $myuserid = $_SESSION['userid'];
@@ -35,7 +38,7 @@
 				$type = $arrB[0]['type'];
 			}
 	}else{//找不到说明是没聊过,
-		//重新创建一个房间号,然后进行通讯,
+		//重新创建一个房间号,然后进行通讯,	
 			$insertSql = "INSERT INTO flock (belongs_id,type,userid_arr) VALUES ('".$myuserid."', '2','".$userid_arrA."')";
 			$insertResult = mysqli_query($con, $insertSql);
 			if($insertResult){//已经成功了
@@ -48,6 +51,15 @@
 					echo "<script>alert('房间号不存在！');window.location.href='http://local.chat.top/roomlist.php'</script>";
 					return;
 			}
+	}
+	if($type == 2){//获取用户聊天信息
+			$chatsql = "select *,FROM_UNIXTIME(create_time,'%Y-%m-%d %H:%i:%s') as datetime from  content left join user on content.user_id = user.id  where content.to_purpose = ".$room_id;
+			$chatsqlResult = mysqli_query($con, $chatsql);
+			$chatarr= $chatsqlResult->fetch_all(MYSQLI_ASSOC);
+			if($chatarr){
+			}
+			
+			
 	}
 	 //给这这个设置房间号(唯一的房间号),下次聊也是这个房间号,保存两个的用户的聊天记录
 	 
@@ -67,6 +79,16 @@
 			<div id="nac">
 				<div class="chat-left">
 					<div class="chat-left-above" id="chat-left-above">
+						<?php
+							foreach($chatarr as $value){
+								if($value['user_id'] == $myuserid){ ?>
+									<div class="chat-content-list"><div class="usernametime"><span class="username"><a href=""><?php echo $value['acces'] ?>：</a></span><i class="usertime"><?php echo $value['datetime'] ?></i></div><div class="usercontent"><span class="usertext"><?php echo $value['content'] ?></span></div></div>
+							<?php 	}else{  ?>
+									<div class="chat-content-list-minne"><div class="usernametime"><span class="username"><a href=""><?php echo $value['acces'] ?> ：</a></span><i class="usertime"><?php echo $value['datetime'] ?></i></div><div class="usercontent"><span class="usertextmine"><?php echo $value['content'] ?></span></div></div>
+								<?php	}
+							}
+						 ?>
+						
 					</div>
 					<div class="chat-left-below">
 						<textarea class="chat-left-text" id="chatContent"></textarea>
@@ -83,6 +105,7 @@
 			var username="<?php echo $_SESSION['userinfo']; ?>";
 			var userid="<?php echo $_SESSION['userid']; ?>";
 			var room_id="<?php echo $room_id; ?>";
+			console.log(room_id);
 			var type="<?php echo $type; ?>";
 			var touserid="<?php echo $touserid; ?>";
 		</script>
